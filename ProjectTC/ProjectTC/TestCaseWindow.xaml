@@ -1,0 +1,113 @@
+﻿<Window x:Class="ProjectTC.TestCaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:mvvm="clr-namespace:Mvvm;assembly=Mvvm" 
+        AllowsTransparency="True" 
+        Title="Project TestCase" WindowStartupLocation="CenterScreen" WindowState="{Binding CurrentWindowState}"
+        WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <!-- 대메뉴 배경색 -->
+        <SolidColorBrush x:Key="WorkspaceMenuBackground" Color="#28a1fa"/>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <mvvm:InvokeCommandAction Command="{Binding RegistrationCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Border BorderBrush="#dcdcdc" BorderThickness="0">
+            <Grid x:Name="grd_main">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 드래그를 위한 백그라운드 -->
+                    <Grid Background="White" x:Name="grd_draggable">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                <mvvm:InvokeCommandAction Command="{Binding DoubleClickTitleCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Grid>
+
+                    <!-- 최상단 메뉴 -->
+                    <Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="120"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- 로고 -->
+                            <Grid Margin="5,5,0,5">
+                                <Image Source="/ResourceBox;component/Resources/Test-case.png" />
+                            </Grid>
+
+                            <!-- 창 컨트롤 -->
+                            <Grid Grid.Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <!-- 윗줄 -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="18"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="5"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- 최소화 -->
+                                    <Image Grid.Column="2" Stretch="None" Source="/ResourceBox;component/Resources/window-minimize.png">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <mvvm:InvokeCommandAction Command="{Binding MinimizeCommand}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Image>
+                                    
+                                    <!-- 최대/복원 -->
+                                    <Image Grid.Column="3" Stretch="None" Source="/ResourceBox;component/Resources/window-zoom.png">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <mvvm:InvokeCommandAction Command="{Binding MaxRestoreToggleCommand}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Image>
+
+                                    <!-- 종료 -->
+                                    <Image Grid.Column="4" Stretch="None" Source="/ResourceBox;component/Resources/window-close.png">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <mvvm:InvokeCommandAction Command="{Binding ProgramExitCommand}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Image>
+                                   
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <!-- 워크스페이스 -->
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding ChildrenView}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </Grid>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
