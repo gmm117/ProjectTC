@@ -62,7 +62,7 @@ namespace Framework
 
                 Connection = new SqlConnection(ConnectionStr);
 
-                if(Connection != null)
+                if (Connection != null && Connection.State == ConnectionState.Open)
                     break;
             }
 
