@@ -1,3 +1,7 @@
 export
 bin
 obj
+/ProjectTC/ProjectTC/Framework/bin
+/ProjectTC/ProjectTC/Mvvm/obj
+/ProjectTC/ProjectTC/ResourceBox/bin
+/ProjectTC/ProjectTC/ResourceBox/obj
