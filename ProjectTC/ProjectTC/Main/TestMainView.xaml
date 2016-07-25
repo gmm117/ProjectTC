@@ -6,6 +6,7 @@
              xmlns:mvvm="clr-namespace:Mvvm;assembly=Mvvm"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:framework="clr-namespace:Framework;assembly=Framework"
+             xmlns:resx="clr-namespace:ProjectTC.Resx" 
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1200">
 
@@ -53,46 +54,185 @@
                 </Grid>
             </Border>
         </Grid>
+        
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="프" HorizontalAlignment="Center"/>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="로" HorizontalAlignment="Center"/>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="젝" HorizontalAlignment="Center"/>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="3" Content="트" HorizontalAlignment="Center"/>
-                </Grid>
+            <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1">
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="1"/>
 
-                <Grid Grid.Column="3">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="테" HorizontalAlignment="Center"/>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="스" HorizontalAlignment="Center"/>
-                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="트" HorizontalAlignment="Center"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Grid.Column="1" Fill="Gray" />
+                    <Rectangle Grid.Column="3" Fill="Gray" />
+                    <Rectangle Grid.Column="5" Fill="Gray" />
+                    <Rectangle Grid.Column="7" Fill="Gray" />
+                    <Rectangle Grid.Column="9" Fill="Gray" />
+                    <Rectangle Grid.Column="11" Fill="Gray" />
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="프" HorizontalAlignment="Center"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="로" HorizontalAlignment="Center"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="젝" HorizontalAlignment="Center"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="3" Content="트" HorizontalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}:">
+                                            <Binding Source="{x:Static resx:ProjectTCResx.ProjectName}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    </Grid>
+                    <Grid Grid.Column="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}:">
+                                            <Binding Source="{x:Static resx:ProjectTCResx.TestName}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    </Grid>
+                    <Grid Grid.Column="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="테" HorizontalAlignment="Center"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="스" HorizontalAlignment="Center"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="트" HorizontalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Column="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}:">
+                                            <Binding Source="{x:Static resx:ProjectTCResx.TotCnt}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    </Grid>
+                    <Grid Grid.Column="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}:">
+                                            <Binding Source="{x:Static resx:ProjectTCResx.TotYesCnt}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    </Grid>
+                    <Grid Grid.Column="12">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition Height="26" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}:">
+                                            <Binding Source="{x:Static resx:ProjectTCResx.TotNoCnt}"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                    </Grid>
+
                 </Grid>
-            </Grid>
+            </Border>
             <Grid Grid.Row="1">
 
             </Grid>

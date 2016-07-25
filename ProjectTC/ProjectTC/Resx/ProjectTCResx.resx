@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AttachFile" xml:space="preserve">
+    <value>첨부파일</value>
+  </data>
+  <data name="CurrentBug" xml:space="preserve">
+    <value>현재버그</value>
+  </data>
+  <data name="ExpectResult" xml:space="preserve">
+    <value>기대효과</value>
+  </data>
+  <data name="PreCondition" xml:space="preserve">
+    <value>환경세팅</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>프로젝트명</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="Seq" xml:space="preserve">
+    <value>순번</value>
+  </data>
+  <data name="TestName" xml:space="preserve">
+    <value>테스트명</value>
+  </data>
+  <data name="TestStep" xml:space="preserve">
+    <value>재현경로</value>
+  </data>
+  <data name="TotCnt" xml:space="preserve">
+    <value>총합</value>
+  </data>
+  <data name="TotNoCnt" xml:space="preserve">
+    <value>총 미완료</value>
+  </data>
+  <data name="TotYesCnt" xml:space="preserve">
+    <value>총 완료</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>프로그램버전</value>
+  </data>
 </root>
