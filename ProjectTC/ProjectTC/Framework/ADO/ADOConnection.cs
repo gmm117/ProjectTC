@@ -60,15 +60,27 @@ namespace Framework
             {
                 string ConnectionStr = string.Format(PreDefine.ConnectionStatement, DBOwner, WindowsIdentity.GetCurrent().Name.Split('\\')[0], "sa", p);
 
-                Connection = new SqlConnection(ConnectionStr);
+                try
+                {
+                    Connection = new SqlConnection(ConnectionStr);
 
-                if (Connection != null && Connection.State == ConnectionState.Open)
-                    break;
+                    Connection.Open();
+                }
+                catch(Exception ex)
+                {
+                    continue;
+                }
+                finally
+                {
+                    if(Connection.State == ConnectionState.Open)
+                        Connection.Close();
+                }
             }
+
 
             if (Connection == null)
             {
-                MessageBox.Show("ADO Connection 실패하였습니다.");
+                MessageBox.Show(Resx.FrameworkresxKO.NotADOConnection);
                 return false;
             }
 
@@ -137,8 +149,8 @@ namespace Framework
                     string Query = string.Empty;
                     Query = string.Format(@"IF NOT EXISTS (SELECT * FROM DBO.TC_USERMENU WHERE MenuName = '{0}')
                                            BEGIN 
-                                            INSERT INTO DBO.TC_USERMENU VALUES (newid(), '{1}', 'Empty') 
-                                           END", item, item);
+                                            INSERT INTO DBO.TC_USERMENU VALUES (NEWID(), '{1}', 'Empty', '{2}', '', 0, 0, 0, 0, 0, 0) 
+                                           END", item, item, item);
                     ExcuteSqlCommand(Query);
                 }
             }
@@ -163,6 +175,14 @@ namespace Framework
                             [MenuID] [varchar](36) NOT NULL,
 	                        [MenuName] [varchar](100) NOT NULL,
 	                        [ParentMenuID] [varchar](36) NOT NULL,
+                            [ProjectName] [varchar](100) NULL,
+	                        [TestName] [varchar](100) NULL,
+	                        [TestTotCnt] int NULL,
+	                        [TestYesCnt] int NULL,
+	                        [TestNoCnt] int NULL,
+	                        [ResultYesCnt] int NULL,
+	                        [ResultNoCnt] int NULL,
+	                        [ResultBlockedCnt] int NULL,
                         CONSTRAINT [PK_TC_USERMENU] PRIMARY KEY CLUSTERED
                         (
 	                        [MenuID] ASC

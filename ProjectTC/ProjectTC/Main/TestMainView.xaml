@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mvvm="clr-namespace:Mvvm;assembly=Mvvm"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:framework="clr-namespace:Framework;assembly=Framework"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200">
+             d:DesignHeight="600" d:DesignWidth="1200">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -18,37 +19,84 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="5"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <!-- 메뉴 -->
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Grid>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="15"/>
-                        <RowDefinition/>
-                        <RowDefinition Height="10"/>
-                    </Grid.RowDefinitions>
 
-                    <!-- 메뉴 -->
-                    <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding MenuList}" SelectedItem="{Binding SelectedMenu}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate DataType="framework:UserMenuTaskVM">
-                                <Grid Name="Grid" Height="30">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="5"/>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label VerticalContentAlignment="Center" Content="{Binding MenuName}" />
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ListBox>
+        <Grid Grid.Column="0">
+            <!-- 메뉴 -->
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- 메뉴 -->
+                        <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding MenuList}" SelectedItem="{Binding SelectedMenu}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="framework:UserMenuTaskVM">
+                                    <Grid Name="Grid" Height="30">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label VerticalContentAlignment="Center" Content="{Binding MenuName}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="프" HorizontalAlignment="Center"/>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="로" HorizontalAlignment="Center"/>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="젝" HorizontalAlignment="Center"/>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="3" Content="트" HorizontalAlignment="Center"/>
+                </Grid>
+
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="테" HorizontalAlignment="Center"/>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="스" HorizontalAlignment="Center"/>
+                    <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="트" HorizontalAlignment="Center"/>
                 </Grid>
             </Grid>
-        </Border>
+            <Grid Grid.Row="1">
+
+            </Grid>
+
+        </Grid>
     </Grid>
 </UserControl>
