@@ -54,17 +54,20 @@
                 </Grid>
             </Border>
         </Grid>
-        
+        <!-- SubView -->        
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
+
+            <!-- 프로젝트 -->
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gray" BorderThickness="1">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -141,6 +144,8 @@
                     </Grid>
                 </Grid>
             </Border>
+
+            <!-- 테스트 -->
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gray" BorderThickness="0,1,0,1">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -243,6 +248,7 @@
                 </Grid>
             </Border>
 
+            <!-- 결과 -->
             <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1,0,1,1">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -271,7 +277,6 @@
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="결" HorizontalAlignment="Center"/>
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="과" HorizontalAlignment="Center"/>
                     </Grid>
-
                     <Grid Grid.Column="2">
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -284,7 +289,6 @@
                         </Grid.ColumnDefinitions>
                         <Label Margin="5,0" Content="Pass:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
                     </Grid>
-
                     <Grid Grid.Column="4">
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -297,7 +301,6 @@
                         </Grid.ColumnDefinitions>
                         <Label Margin="5,0" Content="Fail:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
                     </Grid>
-
                     <Grid Grid.Column="6">
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -310,9 +313,18 @@
                         </Grid.ColumnDefinitions>
                         <Label Margin="5,0" Content="Blocked:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
                     </Grid>
-                    
                 </Grid>
             </Border>
+            
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TabControl SelectedItem="{Binding TabTestList}" SelectedIndex="{Binding TabIndex}">
+                    
+                </TabControl>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="0" >
+               
+            </Grid>
+
         </Grid>
     </Grid>
 </UserControl>
