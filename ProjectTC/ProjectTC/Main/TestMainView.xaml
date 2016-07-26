@@ -61,22 +61,14 @@
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1">
-                <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gray" BorderThickness="1">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="1"/>
-
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="1"/>
-
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="1"/>
-
-                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="1"/>
 
                         <ColumnDefinition Width="*"/>
@@ -88,10 +80,6 @@
 
                     <Rectangle Grid.Column="1" Fill="Gray" />
                     <Rectangle Grid.Column="3" Fill="Gray" />
-                    <Rectangle Grid.Column="5" Fill="Gray" />
-                    <Rectangle Grid.Column="7" Fill="Gray" />
-                    <Rectangle Grid.Column="9" Fill="Gray" />
-                    <Rectangle Grid.Column="11" Fill="Gray" />
 
                     <Grid Grid.Column="0">
                         <Grid.RowDefinitions>
@@ -151,7 +139,29 @@
                         </Label>
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
                     </Grid>
-                    <Grid Grid.Column="6">
+                </Grid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gray" BorderThickness="0,1,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="1" Fill="Gray" />
+                    <Rectangle Grid.Column="3" Fill="Gray" />
+                    <Rectangle Grid.Column="5" Fill="Gray" />
+                    <Rectangle Grid.Column="7" Fill="Gray" />
+
+                    <Grid Grid.Column="0">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -161,7 +171,7 @@
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="스" HorizontalAlignment="Center"/>
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" Content="트" HorizontalAlignment="Center"/>
                     </Grid>
-                    <Grid Grid.Column="8">
+                    <Grid Grid.Column="2">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -184,7 +194,7 @@
                         </Label>
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
                     </Grid>
-                    <Grid Grid.Column="10">
+                    <Grid Grid.Column="4">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -207,7 +217,7 @@
                         </Label>
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
                     </Grid>
-                    <Grid Grid.Column="12">
+                    <Grid Grid.Column="6">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
@@ -230,13 +240,79 @@
                         </Label>
                         <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
                     </Grid>
-
                 </Grid>
             </Border>
-            <Grid Grid.Row="1">
 
-            </Grid>
+            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1,0,1,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="1"/>
 
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Grid.Column="1" Fill="Gray" />
+                    <Rectangle Grid.Column="3" Fill="Gray" />
+                    <Rectangle Grid.Column="5" Fill="Gray" />
+                    
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="0" Content="결" HorizontalAlignment="Center"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Content="과" HorizontalAlignment="Center"/>
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Content="Pass:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
+                    </Grid>
+
+                    <Grid Grid.Column="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Content="Fail:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
+                    </Grid>
+
+                    <Grid Grid.Column="6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="5,0" Content="Blocked:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
+                    </Grid>
+                    
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>
