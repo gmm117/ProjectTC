@@ -162,9 +162,6 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ic_clear_black_24dp_1x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\clear_black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

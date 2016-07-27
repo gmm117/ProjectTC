@@ -23,6 +23,8 @@ namespace ProjectTC
         public TestListView()
         {
             InitializeComponent();
+
+            this.DataContext = new TestListViewModel();
         }
     }
 }
