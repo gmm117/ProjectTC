@@ -25,6 +25,9 @@ namespace ProjectTC
             {
                 MenuList.Add(item.Key);
             }
+
+            TabTestList.Add(new TestListModel("건강보험", new TestListView()));
+            TabTestList.Add(new TestListModel("의료보험", new TestListView()));
         }
 
         public override void Subscribe(object source)
@@ -51,6 +54,24 @@ namespace ProjectTC
             {
                 menuList = value;
                 OnPropertyChanged("MenuList");
+            }
+        }
+
+        private ObservableCollection<TestListModel> tabTestList;
+        public ObservableCollection<TestListModel> TabTestList
+        {
+            get
+            {
+                if (tabTestList == null)
+                {
+                    tabTestList = new ObservableCollection<TestListModel>();
+                }
+                return tabTestList;
+            }
+            set
+            {
+                tabTestList = value;
+                OnPropertyChanged("TabTestList");
             }
         }
 
