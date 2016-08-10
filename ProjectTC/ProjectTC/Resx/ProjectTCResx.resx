@@ -117,17 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>추가</value>
+  </data>
   <data name="AttachFile" xml:space="preserve">
     <value>첨부파일</value>
   </data>
   <data name="CurrentBug" xml:space="preserve">
     <value>현재버그</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
   <data name="ExpectResult" xml:space="preserve">
     <value>기대효과</value>
   </data>
+  <data name="Filter" xml:space="preserve">
+    <value>필터</value>
+  </data>
   <data name="PreCondition" xml:space="preserve">
     <value>환경세팅</value>
+  </data>
+  <data name="ProgramVersion" xml:space="preserve">
+    <value>프로그램버전</value>
   </data>
   <data name="ProjectName" xml:space="preserve">
     <value>프로젝트명</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="Seq" xml:space="preserve">
     <value>순번</value>
+  </data>
+  <data name="TabCopy" xml:space="preserve">
+    <value>탭복사</value>
   </data>
   <data name="TestName" xml:space="preserve">
     <value>테스트명</value>

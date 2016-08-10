@@ -51,7 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\ADOConnection.cs" />
+    <Compile Include="Behavior\CommandBehavior.cs" />
+    <Compile Include="Behavior\CommandBehaviorBinding.cs" />
+    <Compile Include="Behavior\EventHandlerGenerator.cs" />
     <Compile Include="Behavior\FrameworkElementBehavior.cs" />
+    <Compile Include="Behavior\IExecutionStrategy.cs" />
     <Compile Include="Define\PreDefine.cs" />
     <Compile Include="Converter\FilePathToSourceConverter.cs" />
     <Compile Include="Framework\APreference.cs" />
@@ -99,7 +103,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="style\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style\DatePickerStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="style\LableStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="style\TextBoxStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

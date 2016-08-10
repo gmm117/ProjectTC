@@ -15,17 +15,18 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="105"/>
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <i:Interaction.Triggers>
@@ -46,9 +47,294 @@
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
                 <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/add_circle_outline_black.png"/>
-                <Label Grid.Row="1" Grid.Column="3" Content="추가"  FontSize="15" FontWeight="Bold" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,2" />
+                <Label Grid.Row="1" Grid.Column="3" Content="{x:Static resx:ProjectTCResx.Add}"  FontSize="15" FontWeight="Bold" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,2" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <mvvm:InvokeCommandAction Command="{Binding DeleteTestCaseCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/remove_circle_outline_black.png"/>
+                <Label Grid.Row="1" Grid.Column="3" Content="{x:Static resx:ProjectTCResx.Delete}"  FontSize="15" FontWeight="Bold" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,2" />
+            </Grid>
+            <Grid Grid.Column="2">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <mvvm:InvokeCommandAction Command="{Binding FilterTestCaseCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/filter_list_black.png"/>
+                <Label Grid.Row="1" Grid.Column="3" Content="{x:Static resx:ProjectTCResx.Filter}"  FontSize="15" FontWeight="Bold" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,2" />
+            </Grid>
+            <Grid Grid.Column="3">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <mvvm:InvokeCommandAction Command="{Binding CopyTestCaseCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/content_copy_black.png"/>
+                <Label Grid.Row="1" Grid.Column="3" Content="{x:Static resx:ProjectTCResx.TabCopy}"  FontSize="15" FontWeight="Bold" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,2" />
+            </Grid>
+            <Grid Grid.Column="4">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <mvvm:InvokeCommandAction Command="{Binding AttachFileTestCaseCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/content_copy_black.png"/>
+                <Label Grid.Row="1" Grid.Column="3" Content="{x:Static resx:ProjectTCResx.AttachFile}"  FontSize="15" FontWeight="Bold" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,2" />
+            </Grid>
+            <Grid Grid.Column="9">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="1" VerticalAlignment="Center" Text="">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="KeyUp">
+                            <mvvm:InvokeCommandAction Command="{Binding SearchKeyUpCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Column="10">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <mvvm:InvokeCommandAction Command="{Binding SearchTestCaseCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/search_black.png"/>
+            </Grid>
+            <Grid Grid.Column="11">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <mvvm:InvokeCommandAction Command="{Binding HelpTestCaseCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/help_black.png"/>
             </Grid>
         </Grid>
-       
+        <Grid Grid.Row="1">
+            <ListView Grid.Row="1" ItemsSource="{Binding TestCaseList, UpdateSourceTrigger=PropertyChanged}" 
+                         SelectedItem="{Binding SelectedTestCaseItem, Mode=TwoWay}" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="framework:CommandBehavior.Event" Value="MouseDoubleClick"/>
+                        <Setter Property="framework:CommandBehavior.Command" Value="{Binding DataContext.ItemDoubleClickCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListView}}}"/>
+                        <Setter Property="framework:CommandBehavior.CommandParameter" Value="{Binding}"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Seq"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Label Style="{StaticResource DefaultLabelStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Depth1"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Depth2"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Depth3"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Depth4"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Title"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Tester"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Date"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <DatePicker Style="{StaticResource RoundedDatePickerStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="TC Time"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Status"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <ComboBox Style="{StaticResource DefaultRoundedComboBox}" 
+                                                ItemsSource="{Binding ComboStatusList}" VerticalContentAlignment="Center"  SelectedItem="{Binding SelectedStatus, Mode=TwoWay}" DisplayMemberPath="Name" >
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="SelectionChanged">
+                                                    <mvvm:InvokeCommandAction Command="{Binding StatusSelectionChangedCommand}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                        </ComboBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="Priority"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <ComboBox Style="{StaticResource DefaultRoundedComboBox}" 
+                                                ItemsSource="{Binding ComboPriorityList}" VerticalContentAlignment="Center"  SelectedItem="{Binding SelectedPriority, Mode=TwoWay}" DisplayMemberPath="Name" >
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="SelectionChanged">
+                                                    <mvvm:InvokeCommandAction Command="{Binding PrioritySelectionChangedCommand}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                        </ComboBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="{x:Static resx:ProjectTCResx.ProgramVersion}"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBox Style="{StaticResource DefaultTextBoxStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Text="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumnHeader Content="{x:Static resx:ProjectTCResx.AttachFile}"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Label Style="{StaticResource DefaultLabelStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Content="" />
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
     </Grid>
 </UserControl>

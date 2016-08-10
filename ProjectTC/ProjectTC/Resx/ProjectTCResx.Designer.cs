@@ -61,6 +61,15 @@ namespace ProjectTC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 추가.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 첨부파일.
         /// </summary>
         public static string AttachFile {
@@ -79,6 +88,15 @@ namespace ProjectTC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 삭제.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 기대효과.
         /// </summary>
         public static string ExpectResult {
@@ -88,11 +106,29 @@ namespace ProjectTC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 필터.
+        /// </summary>
+        public static string Filter {
+            get {
+                return ResourceManager.GetString("Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 환경세팅.
         /// </summary>
         public static string PreCondition {
             get {
                 return ResourceManager.GetString("PreCondition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 프로그램버전.
+        /// </summary>
+        public static string ProgramVersion {
+            get {
+                return ResourceManager.GetString("ProgramVersion", resourceCulture);
             }
         }
         
@@ -120,6 +156,15 @@ namespace ProjectTC.Resx {
         public static string Seq {
             get {
                 return ResourceManager.GetString("Seq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 탭복사.
+        /// </summary>
+        public static string TabCopy {
+            get {
+                return ResourceManager.GetString("TabCopy", resourceCulture);
             }
         }
         
