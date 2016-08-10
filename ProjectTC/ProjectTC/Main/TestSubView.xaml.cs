@@ -18,13 +18,13 @@ namespace ProjectTC
     /// <summary>
     /// Interaction logic for TestListView.xaml
     /// </summary>
-    public partial class TestListView : UserControl
+    public partial class TestSubView : UserControl
     {
-        public TestListView()
+        public TestSubView()
         {
             InitializeComponent();
 
-            this.DataContext = new TestListViewModel();
+            this.DataContext = new TestSubViewModel();
         }
     }
 }

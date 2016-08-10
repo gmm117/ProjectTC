@@ -339,7 +339,7 @@
                     </TabControl.ItemTemplate>
                     <TabControl.ContentTemplate>
                         <DataTemplate>
-                            <local:TestListView/>
+                            <local:TestSubView/>
                         </DataTemplate>
                     </TabControl.ContentTemplate>
 

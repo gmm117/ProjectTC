@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ProjectTC
 {
-    public class TestListModel : BindableBase
+    public class TestSubModel : BindableBase
     {
-        public TestListModel(string _tabHeader, TestListView _view)
+        public TestSubModel(string _tabHeader, TestSubView _view)
         {
             TabHeader = _tabHeader;
             TabContentView = _view;
@@ -35,13 +35,13 @@ namespace ProjectTC
         /// <summary>
         /// 탭컨트롤 Content
         /// </summary>
-        public TestListView tabContentView; 
-        public TestListView TabContentView 
+        public TestSubView tabContentView;
+        public TestSubView TabContentView 
         { 
             get
             {
                 if(tabContentView == null)
-                    tabContentView = new TestListView();
+                    tabContentView = new TestSubView();
 
                 return tabContentView;
             }

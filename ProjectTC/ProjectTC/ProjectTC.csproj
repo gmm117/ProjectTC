@@ -71,10 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Main\TestListView.xaml.cs">
-      <DependentUpon>TestListView.xaml</DependentUpon>
+    <Compile Include="Main\TestSubView.xaml.cs">
+      <DependentUpon>TestSubView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Main\ViewModel\TestListViewModel.cs" />
+    <Compile Include="Main\ViewModel\TestSubViewModel.cs" />
     <Compile Include="Main\TestMainView.xaml.cs">
       <DependentUpon>TestMainView.xaml</DependentUpon>
     </Compile>
@@ -86,7 +86,7 @@
       <DependentUpon>ProjectTCResx.resx</DependentUpon>
     </Compile>
     <Compile Include="TestCaseWindowViewModel.cs" />
-    <Page Include="Main\TestListView.xaml">
+    <Page Include="Main\TestSubView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
