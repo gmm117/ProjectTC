@@ -70,11 +70,9 @@ namespace Framework
                 {
                     continue;
                 }
-                finally
-                {
-                    if(Connection.State == ConnectionState.Open)
-                        Connection.Close();
-                }
+                
+                if (Connection.State == ConnectionState.Open)
+                     return true;
             }
 
 
@@ -254,7 +252,9 @@ namespace Framework
         // SQL Command 실행
         private void ExcuteSqlCommand(string Query)
         {
-            Connection.Open();
+            if(Connection.State != ConnectionState.Open)
+                Connection.Open();
+
             using (SqlCommand cmd = new SqlCommand(Query, Connection))
             {
                 cmd.ExecuteNonQuery();
