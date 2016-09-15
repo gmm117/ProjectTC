@@ -79,7 +79,8 @@
       <DependentUpon>TestMainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\ViewModel\TestMainViewModel.cs" />
-    <Compile Include="Model\TestListModel.cs" />
+    <Compile Include="Model\TestMainModel.cs" />
+    <Compile Include="Model\TestSubModel.cs" />
     <Compile Include="Resx\ProjectTCResx.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

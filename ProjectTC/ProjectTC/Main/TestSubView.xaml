@@ -8,6 +8,14 @@
              xmlns:framework="clr-namespace:Framework;assembly=Framework"
              xmlns:resx="clr-namespace:ProjectTC.Resx"
              mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <mvvm:InvokeCommandAction Command="{Binding RegistrationCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <mvvm:InvokeCommandAction Command="{Binding UnRegistrationCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>

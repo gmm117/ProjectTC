@@ -104,7 +104,24 @@ namespace Framework
             }
         }
 
+        /// <summary>
+        /// 컨텍스트 등록 해제 커맨드
+        /// </summary>
+        public DelegateCommand UnRegistrationCommand
+        {
+            get
+            {
+                if (m_unregistrationCommand == null)
+                {
+                    m_unregistrationCommand = new DelegateCommand(Unregistration);
+                }
+                return m_unregistrationCommand;
+            }
+        }
+        private DelegateCommand m_unregistrationCommand;
+        
         #endregion
+
 
         #region method
 
@@ -141,9 +158,6 @@ namespace Framework
 
         #endregion
 
-
-       
-
         #region interface
 
         /// <summary>
@@ -174,6 +188,7 @@ namespace Framework
 
         #endregion
 
+        public UIElement OwnerView { get; set; }
 
         #region IDisposable 관련 추가
 

@@ -9,10 +9,12 @@
              xmlns:resx="clr-namespace:ProjectTC.Resx" 
              xmlns:local="clr-namespace:ProjectTC"
              mc:Ignorable="d" Width="1200" Height="750">
-
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <mvvm:InvokeCommandAction Command="{Binding RegistrationCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <mvvm:InvokeCommandAction Command="{Binding UnRegistrationCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid Background="White">
@@ -35,7 +37,8 @@
                         </Grid.RowDefinitions>
 
                         <!-- 메뉴 -->
-                        <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding MenuList}" SelectedItem="{Binding SelectedMenu}">
+                        <ListBox Grid.Row="1" BorderThickness="0" ItemsSource="{Binding MenuList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                 SelectedItem="{Binding SelectedMenu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="framework:UserMenuTaskVM">
                                     <Grid Name="Grid" Height="30">
@@ -317,7 +320,7 @@
             </Border>
             
             <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                <TabControl ItemsSource="{Binding TabTestList}" SelectedItem="{Binding SelectedTabTest}" SelectedIndex="{Binding SelectedTabIndex}">
+                <TabControl ItemsSource="{Binding TabTestList}" SelectedItem="{Binding SelectedTabTest}" >
                     <TabControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>

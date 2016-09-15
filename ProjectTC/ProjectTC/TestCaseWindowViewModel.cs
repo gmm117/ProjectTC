@@ -38,8 +38,6 @@ namespace ProjectTC
 
         #region Command
         private ICommand registrationCommand;
-
-
         public ICommand RegistrationCommand
         {
             get

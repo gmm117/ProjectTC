@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,7 @@ namespace Framework
                 }
                 catch(Exception ex)
                 {
+                   // MessageBox.Show(ex.ToString());
                     continue;
                 }
                 
@@ -218,9 +220,14 @@ namespace Framework
                 {
                     var item = new UserMenuModel();
 
-                    item.MenuId         = read[0].ToString();
-                    item.MenuName       = read[1].ToString();
-                    item.ParendMenuID   = read[2].ToString();
+                    PropertyInfo[] properties = item.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+                    int nIdx = 0;
+                    foreach (PropertyInfo prop in properties)
+                    {
+                        PropertyInfo propertyInfo = item.GetType().GetProperty(prop.Name);
+                        propertyInfo.SetValue(item, Convert.ChangeType(read[nIdx++].ToString(), propertyInfo.PropertyType), null);
+                    }
+
 
                     list.Add(item);
                 }
@@ -262,27 +269,7 @@ namespace Framework
             }
         }
 
-        
-
-        // SQL Command 실행
-        /*private IDictionary<UserMenuModel, IList<UserMenuModel>> ReadSqlCommand(string Query)
-        {
-            IDictionary<UserMenuModel, IList<UserMenuModel>> dic = new Dictionary<UserMenuModel, IList<UserMenuModel>>();
-
-            Connection.Open();
-            using (SqlCommand cmd = new SqlCommand(Query, Connection))
-            {
-                SqlDataReader read = cmd.ExecuteReader();
-
-               
-
-                
-            }
-
-            return dic;
-        }*/
-
         #endregion
-
     }
 }
+

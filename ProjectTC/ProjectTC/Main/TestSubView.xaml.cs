@@ -20,11 +20,16 @@ namespace ProjectTC
     /// </summary>
     public partial class TestSubView : UserControl
     {
+        public TestSubViewModel VM;
+
         public TestSubView()
         {
             InitializeComponent();
 
-            this.DataContext = new TestSubViewModel();
+            this.VM = new TestSubViewModel();
+            this.VM.OwnerView = this;
+
+            this.DataContext = VM;
         }
     }
 }
