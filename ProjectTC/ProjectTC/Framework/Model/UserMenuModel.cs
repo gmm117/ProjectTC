@@ -9,8 +9,10 @@ namespace Framework
 {
     public class UserMenuModel : BindableBase
     {
-        // 메뉴ID
-        private string menuId;
+        /// <summary>
+        /// 메뉴ID
+        /// </summary>
+        private string menuId = string.Empty;
         public string MenuId
         {
             get { return menuId; }
@@ -21,8 +23,10 @@ namespace Framework
             }
         }
 
-        // 메뉴명
-        private string menuName;
+        /// <summary>
+        /// 메뉴명
+        /// </summary>
+        private string menuName = string.Empty;
         public string MenuName
         {
             get
@@ -36,8 +40,10 @@ namespace Framework
             }
         }
 
-        // 부모MenuID
-        private string parendMenuID;
+        /// <summary>
+        /// 부모MenuID
+        /// </summary>
+        private string parendMenuID = string.Empty;
         public string ParendMenuID
         {
             get
@@ -52,8 +58,10 @@ namespace Framework
 
         }
 
-        // 선택된 메뉴프로젝트명
-        private string projectName;
+        /// <summary>
+        /// 선택된 메뉴프로젝트명
+        /// </summary>
+        private string projectName = string.Empty;
         public string ProjectName
         {
             get
@@ -67,8 +75,10 @@ namespace Framework
             }
         }
 
-        // 테스트명
-        private string testName;
+        /// <summary>
+        /// 테스트명
+        /// </summary>
+        private string testName = string.Empty;
         public string TestName
         {
             get
@@ -82,8 +92,10 @@ namespace Framework
             }
         }
 
-        // 테스트총합
-        private int testTotCnt;
+        /// <summary>
+        /// 테스트총합
+        /// </summary>
+        private int testTotCnt = 0;
         public int TestTotCnt
         {
             get
@@ -97,8 +109,10 @@ namespace Framework
             }
         }
 
-        // 테스트 총완료건수
-        private int testYesCnt;
+        /// <summary>
+        /// 테스트 총완료건수
+        /// </summary>
+        private int testYesCnt = 0;
         public int TestYesCnt
         {
             get
@@ -112,8 +126,10 @@ namespace Framework
             }
         }
 
-        // 테스트 총 미완료건수
-        private int testNoCnt;
+        /// <summary>
+        /// 테스트 총 미완료건수
+        /// </summary>
+        private int testNoCnt = 0;
         public int TestNoCnt
         {
             get
@@ -127,8 +143,10 @@ namespace Framework
             }
         }
 
-        // 결과 총 성공건수
-        private int resultYesCnt;
+        /// <summary>
+        /// 결과 총 성공건수
+        /// </summary>
+        private int resultYesCnt = 0;
         public int ResultYesCnt
         {
             get
@@ -142,8 +160,10 @@ namespace Framework
             }
         }
 
-        // 결과 총 실패건수
-        private int resultNoCnt;
+        /// <summary>
+        /// 결과 총 실패건수
+        /// </summary>
+        private int resultNoCnt = 0;
         public int ResultNoCnt
         {
             get
@@ -157,8 +177,10 @@ namespace Framework
             }
         }
 
-        // 결과 총 Block건수
-        private int resultBlockCnt;
+        /// <summary>
+        /// 결과 총 Block건수
+        /// </summary>
+        private int resultBlockCnt = 0;
         public int ResultBlockCnt
         {
             get

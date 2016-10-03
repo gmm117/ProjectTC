@@ -8,6 +8,9 @@
              xmlns:framework="clr-namespace:Framework;assembly=Framework"
              xmlns:resx="clr-namespace:ProjectTC.Resx"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        
+    </UserControl.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <mvvm:InvokeCommandAction Command="{Binding RegistrationCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
@@ -20,8 +23,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition />
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="80"/>
@@ -183,19 +192,19 @@
                 <Image Grid.Row="1" Grid.Column="1" Stretch="Uniform" Source="/ResourceBox;component/Resources/help_black.png"/>
             </Grid>
         </Grid>
-        <Grid Grid.Row="1">
-            <ListView Grid.Row="1" ItemsSource="{Binding TestCaseList, UpdateSourceTrigger=PropertyChanged}" 
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <ListView ItemsSource="{Binding TestCaseList, UpdateSourceTrigger=PropertyChanged}" 
                          SelectedItem="{Binding SelectedTestCaseItem, Mode=TwoWay}" >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
-                        <Setter Property="framework:CommandBehavior.Event" Value="MouseDoubleClick"/>
-                        <Setter Property="framework:CommandBehavior.Command" Value="{Binding DataContext.ItemDoubleClickCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListView}}}"/>
+                        <Setter Property="framework:CommandBehavior.Event" Value="MouseLeftButtonUp"/>
+                        <Setter Property="framework:CommandBehavior.Command" Value="{Binding DataContext.MouseLeftButtonUpCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListView}}}"/>
                         <Setter Property="framework:CommandBehavior.CommandParameter" Value="{Binding}"/>
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn>
+                        <GridViewColumn Width="40">
                             <GridViewColumnHeader Content="Seq"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -205,7 +214,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Depth1"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -215,7 +224,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Depth2"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -225,7 +234,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Depth3"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -235,7 +244,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Depth4"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -245,7 +254,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Title"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -255,7 +264,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Tester"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -265,7 +274,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="80">
                             <GridViewColumnHeader Content="Date"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -275,7 +284,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="60">
                             <GridViewColumnHeader Content="TC Time"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -285,7 +294,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="60">
                             <GridViewColumnHeader Content="Status"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -302,7 +311,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="60">
                             <GridViewColumnHeader Content="Priority"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -319,7 +328,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="120">
                             <GridViewColumnHeader Content="{x:Static resx:ProjectTCResx.ProgramVersion}"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -329,7 +338,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn>
+                        <GridViewColumn Width="150">
                             <GridViewColumnHeader Content="{x:Static resx:ProjectTCResx.AttachFile}"/>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -343,6 +352,126 @@
                 </ListView.View>
             </ListView>
         </Grid>
-
+        
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="1"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Fill="Gray" />
+                <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="Gray" />
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="2"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="TestStep" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
+                        <Label.Content>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}({0})">
+                                        <Binding Source="{x:Static resx:ProjectTCResx.TestStep}"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Label.Content>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding TestStep}"></TextBox>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="2"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="Pre-Conditon" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
+                        <Label.Content>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}({0})">
+                                        <Binding Source="{x:Static resx:ProjectTCResx.PreCondition}"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Label.Content>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding PreCondition}"></TextBox>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,2,2,2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="1"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Fill="Gray" />
+                <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="Gray" />
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="2"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="Current Test" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
+                        <Label.Content>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}({0})">
+                                        <Binding Source="{x:Static resx:ProjectTCResx.CurrentBug}"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Label.Content>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding CurTest}"></TextBox>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="2"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="Expect Result" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
+                    <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
+                        <Label.Content>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{}({0})">
+                                        <Binding Source="{x:Static resx:ProjectTCResx.ExpectResult}"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Label.Content>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding ExpResult}"></TextBox>
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

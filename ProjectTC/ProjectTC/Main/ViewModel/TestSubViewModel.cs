@@ -23,7 +23,9 @@ namespace ProjectTC
 
         #region Command
 
-
+        /// <summary>
+        /// 첨부파일
+        /// </summary>
         private DelegateCommand attachFileTestCaseCommand;
         public DelegateCommand AttachFileTestCaseCommand
         {
@@ -43,6 +45,30 @@ namespace ProjectTC
             dialog.Multiselect = false;
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             dialog.ShowDialog();
+        }
+
+        /// <summary>
+        /// ListView LeftClick
+        /// </summary>
+        private DelegateCommand<object> mouseLeftButtonUpCommand;
+        public DelegateCommand<object> MouseLeftButtonUpCommand
+        {
+            get
+            {
+                if (mouseLeftButtonUpCommand == null)
+                    mouseLeftButtonUpCommand = new DelegateCommand<object>(MouseLeftButtonUpCommandInteraction);
+                return mouseLeftButtonUpCommand;
+            }
+            set { mouseLeftButtonUpCommand = value; }
+        }
+
+        private void MouseLeftButtonUpCommandInteraction(object obj)
+        {
+            if (obj == null)
+                return;
+
+            UserMenuItemModel model = obj as UserMenuItemModel;
+
 
         }
 

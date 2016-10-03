@@ -40,9 +40,6 @@ namespace ProjectTC
         { 
             get
             {
-                if(tabContentView == null)
-                    tabContentView = new TestSubView();
-
                 return tabContentView;
             }
             set

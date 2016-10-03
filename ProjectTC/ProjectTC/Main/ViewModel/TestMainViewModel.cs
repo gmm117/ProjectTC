@@ -36,6 +36,9 @@ namespace ProjectTC
 
         #region Preperty
 
+        /// <summary>
+        /// 메뉴Item
+        /// </summary>
         private IDictionary<UserMenuModel, IList<UserMenuModel>> dicItems;
         public IDictionary<UserMenuModel, IList<UserMenuModel>> DicItems
         {

@@ -1,0 +1,58 @@
+﻿
+// Menu 테이블
+CREATE TABLE [dbo].[TC_USERMENU](
+	[MenuID] [varchar](36) NOT NULL,
+	[MenuName] [varchar](100) NOT NULL,
+	[ParentMenuID] [varchar](36) NOT NULL,
+	[ProjectName] [varchar](100) NULL,
+	[TestName] [varchar](100) NULL,
+	[TestTotCnt] [int] NULL,
+	[TestYesCnt] [int] NULL,
+	[TestNoCnt] [int] NULL,
+	[ResultYesCnt] [int] NULL,
+	[ResultNoCnt] [int] NULL,
+	[ResultBlockedCnt] [int] NULL,
+ CONSTRAINT [PK_TC_USERMENU] PRIMARY KEY CLUSTERED 
+(
+	[MenuID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+// MenuItem 테이블
+CREATE TABLE [dbo].[TC_USERMENU_ITEM](
+	[MenuID] [varchar](36) NOT NULL,
+	[Seq] [int] NOT NULL,
+	[Depth1] [varchar](512) NULL,
+	[Depth2] [varchar](512) NULL,
+	[Depth3] [varchar](512) NULL,
+	[Depth4] [varchar](512) NULL,
+	[Title] [varchar](512) NULL,
+	[Tester] [varchar](512) NULL,
+	[TestDate] [datetime] NULL,
+	[TestTime] [int] NULL,
+	[Status] [char](1) NULL,
+	[Priority] [char](1) NULL,
+	[Version] [varchar](512) NULL,
+	[TestStep] [varchar](2048) NULL,
+	[CurTest] [varchar](2048) NULL,
+	[PreCondition] [varchar](2048) NULL,
+	[ExpResult] [varchar](2048) NULL,
+ CONSTRAINT [PK_TC_USERMENU_ITEM] PRIMARY KEY CLUSTERED 
+(
+	[MenuID] ASC,
+	[Seq] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[TC_USERMENU_ITEM]  WITH CHECK ADD  CONSTRAINT [FK_TC_USERMENU_ITEM_TC_USERMENU] FOREIGN KEY([MenuID])
+REFERENCES [dbo].[TC_USERMENU] ([MenuID])
+GO
+
+ALTER TABLE [dbo].[TC_USERMENU_ITEM] CHECK CONSTRAINT [FK_TC_USERMENU_ITEM_TC_USERMENU]
+GO
+
+// 메뉴Item 삽입
+INSERT INTO dbo.TC_USERMENU VALUES (NEWID(), '건강보험', '9AB89DC6-54E4-478F-A5BE-6AC79CE9E326', '보험차트', '건강보험', 0, 0, 0, 0, 0, 0)

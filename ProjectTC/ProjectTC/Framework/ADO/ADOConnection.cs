@@ -144,9 +144,12 @@ namespace Framework
         {
             try
             {
-                foreach(string item in PreDefine.UserMenuList)
+                string[] UserMenuList = { "인적사항", "데스크", "예약", "수납", "전자차트", "보험차트", "보험청구", "EDI" };
+
+                foreach(string item in UserMenuList)
                 {
                     string Query = string.Empty;
+
                     Query = string.Format(@"IF NOT EXISTS (SELECT * FROM DBO.TC_USERMENU WHERE MenuName = '{0}')
                                            BEGIN 
                                             INSERT INTO DBO.TC_USERMENU VALUES (NEWID(), '{1}', 'Empty', '{2}', '', 0, 0, 0, 0, 0, 0) 
@@ -248,6 +251,39 @@ namespace Framework
             }
 
             return dic;
+        }
+
+        // SQL Command 실행
+        public IList<UserMenuItemModel> GetMenuItemList(string MenuID)
+        {
+            IList<UserMenuItemModel> list = new List<UserMenuItemModel>();
+
+            string Query = string.Empty;
+            Query = string.Format(@"SELECT * FROM [DBO].[TC_USERMENU_ITEM] values = '{0}' ", MenuID);
+
+            Connection.Open();
+            using (SqlCommand cmd = new SqlCommand(Query, Connection))
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    var item = new UserMenuModel();
+
+                    PropertyInfo[] properties = item.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+                    int nIdx = 0;
+                    foreach (PropertyInfo prop in properties)
+                    {
+                        PropertyInfo propertyInfo = item.GetType().GetProperty(prop.Name);
+                        propertyInfo.SetValue(item, Convert.ChangeType(read[nIdx++].ToString(), propertyInfo.PropertyType), null);
+                    }
+
+
+                    
+                }
+            }
+
+            return list;
         }
 
         #endregion

@@ -8,7 +8,7 @@
              xmlns:framework="clr-namespace:Framework;assembly=Framework"
              xmlns:resx="clr-namespace:ProjectTC.Resx" 
              xmlns:local="clr-namespace:ProjectTC"
-             mc:Ignorable="d" Width="1200" Height="750">
+             mc:Ignorable="d" >
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <mvvm:InvokeCommandAction Command="{Binding RegistrationCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
@@ -63,7 +63,6 @@
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="150"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -348,118 +347,6 @@
 
                 </TabControl>
             </Grid>
-            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="2">
-                <Grid >
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="1"/>
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Fill="Gray" />
-                    <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="Gray" />
-                    <Grid Grid.Row="0" Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="2"/>
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="TestStep" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
-                            <Label.Content>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}({0})">
-                                            <Binding Source="{x:Static resx:ProjectTCResx.TestStep}"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </Label.Content>
-                        </Label>
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="2"/>
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="Pre-Conditon" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
-                            <Label.Content>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}({0})">
-                                            <Binding Source="{x:Static resx:ProjectTCResx.PreCondition}"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </Label.Content>
-                        </Label>
-                    </Grid>
-                    
-                    
-                </Grid>
-            </Border>
-            <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0,2,2,2">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="1"/>
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="1"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Fill="Gray" />
-                    <Rectangle Grid.Column="1" Grid.RowSpan="3" Fill="Gray" />
-                    <Grid Grid.Row="0" Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="2"/>
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="Current Test" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
-                            <Label.Content>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}({0})">
-                                            <Binding Source="{x:Static resx:ProjectTCResx.CurrentBug}"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </Label.Content>
-                        </Label>
-                    </Grid>
-                    <Grid Grid.Row="2" Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="2"/>
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Content="Expect Result" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="14"/>
-                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="14">
-                            <Label.Content>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}({0})">
-                                            <Binding Source="{x:Static resx:ProjectTCResx.ExpectResult}"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </Label.Content>
-                        </Label>
-                    </Grid>
-
-                </Grid>
-            </Border>
-
         </Grid>
     </Grid>
 </UserControl>

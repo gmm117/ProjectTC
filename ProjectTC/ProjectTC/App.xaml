@@ -10,6 +10,8 @@
             
             <!-- Style -->
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Framework;component/Style/CommonColor.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Framework;component/Style/ListViewStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Framework;component/Style/LableStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Framework;component/Style/TextBoxStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Framework;component/Style/DatePickerStyle.xaml"/>
