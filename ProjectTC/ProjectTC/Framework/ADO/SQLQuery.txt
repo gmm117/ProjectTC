@@ -54,5 +54,23 @@ GO
 ALTER TABLE [dbo].[TC_USERMENU_ITEM] CHECK CONSTRAINT [FK_TC_USERMENU_ITEM_TC_USERMENU]
 GO
 
-// 메뉴Item 삽입
+// 메뉴 삽입
 INSERT INTO dbo.TC_USERMENU VALUES (NEWID(), '건강보험', '9AB89DC6-54E4-478F-A5BE-6AC79CE9E326', '보험차트', '건강보험', 0, 0, 0, 0, 0, 0)
+
+
+// 메뉴Item 삽입
+insert into dbo.TC_USERMENU_ITEM values ('6A96B0C9-9CB4-45ED-88DC-598A9A70DC5E', 1, '보험차트'
+,'진료수가창'
+,'수가삭제'
+,''
+,'진료삭제'
+,'홍승아'
+,'2016-07-19'
+,2
+,3
+,3
+,'3.5.2.21'
+,'보험차트 > 진료수가창 > 수가삭제 - 진료수가내역 확인'
+,'수가삭제 누를 시 수가내역이 삭제되지만 진료비가 변경안됨'
+,'이전에 미리 진료가 입력되어 있어야 한다.'
+,'수가삭제 버튼 클릭 시 총진료비,본인부담금이 같이 변경되야함')
