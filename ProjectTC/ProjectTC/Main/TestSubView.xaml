@@ -193,8 +193,8 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
-            <ListView ItemsSource="{Binding TestCaseList, UpdateSourceTrigger=PropertyChanged}" 
-                         SelectedItem="{Binding SelectedTestCaseItem, Mode=TwoWay}" >
+            <ListView ItemsSource="{Binding TestSubList, UpdateSourceTrigger=PropertyChanged}" 
+                         SelectedItem="{Binding SelectedTestSubItem, Mode=TwoWay}" >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="framework:CommandBehavior.Event" Value="MouseLeftButtonUp"/>

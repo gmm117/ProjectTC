@@ -1,4 +1,5 @@
-﻿using Framework;
+﻿using AutoMapper;
+using Framework;
 using Mvvm;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace ProjectTC
 
         public override void Initialized()
         {
+            InitializeMapper();
+            
             DicItems = MemPreference.Get<ADOConnection>().InitMenuList();
             MenuList = new ObservableCollection<UserMenuModel>(DicItems.Keys);
 
@@ -172,24 +175,44 @@ namespace ProjectTC
 
         #region Method
 
+        private void InitializeMapper()
+        {
+            Mapper.CreateMap<UserMenuItemADO, UserMenuItemModel>()
+                .ForMember(Item => Item.IsCheck, opt => opt.Ignore());
+        }
+
         private void Refresh()
         {
-            TabTestList.Clear();
-
-            if (DicItems.ContainsKey(selectedMenu) == true)
+            try
             {
-                var items = DicItems.Where(p => p.Key == selectedMenu).FirstOrDefault();
-                if (items.Value != null)
-                {
-                    foreach (var item in items.Value)
-                    {
-                        TabTestList.Add(new TestSubModel(item.TestName, new TestSubView()));
-                    }
+                TabTestList.Clear();
 
-                    if (TabTestList.Count > 0)
-                        SelectedTabTest = TabTestList.FirstOrDefault();
+                if (DicItems.ContainsKey(selectedMenu) == true)
+                {
+                    var items = DicItems.Where(p => p.Key == selectedMenu).FirstOrDefault();
+                    if (items.Value != null)
+                    {
+                        foreach (var item in items.Value)
+                        {
+                            var subItem = MemPreference.Get<ADOConnection>().GetMenuItemList(item.MenuId);
+                            if (subItem.Count <= 0)
+                                continue;
+
+                            var subModel = new TestSubModel(item.TestName, new TestSubView());
+                            subModel.TabContentView.VM.TestSubList = new ObservableCollection<UserMenuItemModel>(subItem.Select(Mapper.Map<UserMenuItemADO, UserMenuItemModel>).ToList());
+                            TabTestList.Add(subModel);
+                        }
+
+                        if (TabTestList.Count > 0)
+                            SelectedTabTest = TabTestList.FirstOrDefault();
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         #endregion

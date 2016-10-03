@@ -231,9 +231,10 @@ namespace Framework
                         propertyInfo.SetValue(item, Convert.ChangeType(read[nIdx++].ToString(), propertyInfo.PropertyType), null);
                     }
 
-
                     list.Add(item);
                 }
+
+                read.Close();
 
                 var items = list.Where(p => p.ParendMenuID == "Empty");
 
@@ -254,21 +255,20 @@ namespace Framework
         }
 
         // SQL Command 실행
-        public IList<UserMenuItemModel> GetMenuItemList(string MenuID)
+        public IList<UserMenuItemADO> GetMenuItemList(string MenuID)
         {
-            IList<UserMenuItemModel> list = new List<UserMenuItemModel>();
+            IList<UserMenuItemADO> list = new List<UserMenuItemADO>();
 
             string Query = string.Empty;
-            Query = string.Format(@"SELECT * FROM [DBO].[TC_USERMENU_ITEM] values = '{0}' ", MenuID);
+            Query = string.Format(@"SELECT * FROM [DBO].[TC_USERMENU_ITEM] where MenuID = '{0}' ", MenuID);
 
-            Connection.Open();
             using (SqlCommand cmd = new SqlCommand(Query, Connection))
             {
                 SqlDataReader read = cmd.ExecuteReader();
 
                 while (read.Read())
                 {
-                    var item = new UserMenuModel();
+                    var item = new UserMenuItemADO();
 
                     PropertyInfo[] properties = item.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
                     int nIdx = 0;
@@ -278,9 +278,9 @@ namespace Framework
                         propertyInfo.SetValue(item, Convert.ChangeType(read[nIdx++].ToString(), propertyInfo.PropertyType), null);
                     }
 
-
-                    
+                    list.Add(item);
                 }
+                read.Close();
             }
 
             return list;

@@ -7,28 +7,14 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
-    public class UserMenuItemModel : BindableBase
+    public class UserMenuItemADO 
     {
-        public UserMenuItemModel ()
+        public UserMenuItemADO()
 	    {
 
 	    }
 
         #region Property
-
-        /// <summary>
-        /// 선택여부
-        /// </summary>
-        private bool isCheck = false;
-        public bool IsCheck
-        {
-            get { return isCheck; }
-            set
-            {
-                isCheck = value;
-                OnPropertyChanged("IsCheck");
-            }
-        }
 
         /// <summary>
         /// 메뉴ID
@@ -40,7 +26,6 @@ namespace Framework
             set
             {
                 menuId = value;
-                OnPropertyChanged("MenuId");
             }
         }
 
@@ -54,10 +39,9 @@ namespace Framework
             {
                 return seq;
             }
-            set 
+            set
             {
                 seq = value;
-                OnPropertyChanged("Seq");
             }
         }
 
@@ -71,7 +55,6 @@ namespace Framework
             set
             {
                 depth1 = value;
-                OnPropertyChanged("Depth1");
             }
         }
 
@@ -85,7 +68,6 @@ namespace Framework
             set
             {
                 depth2 = value;
-                OnPropertyChanged("Depth2");
             }
         }
 
@@ -99,7 +81,6 @@ namespace Framework
             set
             {
                 depth3 = value;
-                OnPropertyChanged("Depth3");
             }
         }
 
@@ -113,7 +94,6 @@ namespace Framework
             set
             {
                 depth4 = value;
-                OnPropertyChanged("Depth4");
             }
         }
 
@@ -127,7 +107,6 @@ namespace Framework
             set
             {
                 title = value;
-                OnPropertyChanged("Title");
             }
         }
 
@@ -141,7 +120,6 @@ namespace Framework
             set
             {
                 tester = value;
-                OnPropertyChanged("Tester");
             }
         }
 
@@ -155,7 +133,6 @@ namespace Framework
             set
             {
                 testDate = value;
-                OnPropertyChanged("TestDate");
             }
         }
 
@@ -169,7 +146,6 @@ namespace Framework
             set
             {
                 testTime = value;
-                OnPropertyChanged("TestTime");
             }
         }
 
@@ -209,7 +185,6 @@ namespace Framework
             set
             {
                 version = value;
-                OnPropertyChanged("Version");
             }
         }
 
@@ -223,7 +198,6 @@ namespace Framework
             set
             {
                 testStep = value;
-                OnPropertyChanged("TestStep");
             }
         }
 
@@ -237,7 +211,6 @@ namespace Framework
             set
             {
                 curTest = value;
-                OnPropertyChanged("CurTest");
             }
         }
 
@@ -251,7 +224,6 @@ namespace Framework
             set
             {
                 preCondition = value;
-                OnPropertyChanged("PreCondition");
             }
         }
 
@@ -265,7 +237,6 @@ namespace Framework
             set
             {
                 expResult = value;
-                OnPropertyChanged("ExpResult");
             }
         }
 
