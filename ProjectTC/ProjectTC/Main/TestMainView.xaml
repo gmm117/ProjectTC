@@ -336,12 +336,11 @@
                                     </i:Interaction.Triggers>
                                 </Image>
                             </Grid>
-                            
                         </DataTemplate>
                     </TabControl.ItemTemplate>
                     <TabControl.ContentTemplate>
                         <DataTemplate>
-                            <local:TestSubView/>
+                            <ContentControl Content="{Binding TabContentView}"/>
                         </DataTemplate>
                     </TabControl.ContentTemplate>
 
