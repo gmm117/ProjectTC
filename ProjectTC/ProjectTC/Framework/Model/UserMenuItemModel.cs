@@ -1,6 +1,7 @@
 ﻿using Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -174,28 +175,123 @@ namespace Framework
         }
 
         /// <summary>
-        /// 상태("P":Pass, "F": Fail, "B":Block)
+        /// 상태리스트("P":Pass, "F": Fail, "B":Block)
         /// </summary>
-        private string status = "B";
-        public string Status
+        private ObservableCollection<ComboIntItem> comboStatusList = new ObservableCollection<ComboIntItem>();
+        public ObservableCollection<ComboIntItem> ComboStatusList
         {
-            get { return status; }
+            get
+            {
+                if (comboStatusList.Count == 0)
+                {
+                    comboStatusList.Add(new ComboIntItem("Pass", 1));
+                    comboStatusList.Add(new ComboIntItem("Fail", 2));
+                    comboStatusList.Add(new ComboIntItem("Block", 3));
+                }
+
+                return comboStatusList;
+            }
             set
             {
-                status = value;
+                comboStatusList = value;
+                OnPropertyChanged("ComboStatusList");
             }
         }
 
         /// <summary>
-        /// 우선순위(High:상, middle:중, bottom:하)
+        /// 선택된 상태리스트("P":Pass, "F": Fail, "B":Block)
         /// </summary>
-        private string priority = "B";
-        public string Priority
+        private ComboIntItem selectedStatus;
+        public ComboIntItem SelectedStatus
         {
-            get { return priority; }
+            get
+            {
+                return selectedStatus;
+            }
             set
             {
-                priority = value;
+                selectedStatus = value;
+
+                if (selectedStatus.DisplayString != StatusToString)
+                    StatusToString = SelectedStatus.DisplayString;
+
+                OnPropertyChanged("SelectedStatus");
+            }
+        }
+
+        /// <summary>
+        /// 상태("P"(1):Pass, "F"(2): Fail, "B"(3):Block)
+        /// </summary>
+        private string statusToString = "Block";
+        public string StatusToString
+        {
+            get 
+            {
+                return statusToString; 
+            }
+            set
+            {
+                statusToString = value;
+                OnPropertyChanged("StatusToString");
+            }
+        }
+
+        /// <summary>
+        /// 우선순위(High(1):상, middle(2):중, bottom(3):하)
+        /// </summary>
+        private ObservableCollection<ComboIntItem> comboPriorityList = new ObservableCollection<ComboIntItem>();
+        public ObservableCollection<ComboIntItem> ComboPriorityList
+        {
+            get
+            {
+                if (comboPriorityList.Count == 0)
+                {
+                    comboPriorityList.Add(new ComboIntItem(Resx.FrameworkresxKO.High, 1));
+                    comboPriorityList.Add(new ComboIntItem(Resx.FrameworkresxKO.Middle, 2));
+                    comboPriorityList.Add(new ComboIntItem(Resx.FrameworkresxKO.Bottom, 3));
+                }
+
+                return comboPriorityList;
+            }
+            set
+            {
+                comboPriorityList = value;
+                OnPropertyChanged("ComboPriorityList");
+            }
+        }
+
+        /// <summary>
+        /// 선택된 우선순위(High(1):상, middle(2):중, bottom(3):하)
+        /// </summary>
+        private ComboIntItem selectedPriority;
+        public ComboIntItem SelectedPriority
+        {
+            get
+            {
+                return selectedPriority;
+            }
+            set
+            {
+                selectedPriority = value;
+
+                if (selectedPriority.DisplayString != PriorityToString)
+                    PriorityToString = selectedPriority.DisplayString;
+
+                OnPropertyChanged("SelectedPriority");
+            }
+        }
+        
+        /// <summary>
+        /// 우선순위(High(1):상, middle(3):중, bottom(2):하)
+        /// </summary>
+        private string priorityToString = Resx.FrameworkresxKO.Bottom;
+        public string PriorityToString
+        {
+            get { return priorityToString; }
+            set
+            {
+                priorityToString = value;
+                OnPropertyChanged("PriorityToString");
             }
         }
 

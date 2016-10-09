@@ -123,6 +123,12 @@
   <data name="AttachFile" xml:space="preserve">
     <value>첨부파일</value>
   </data>
+  <data name="Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="Bottom" xml:space="preserve">
+    <value>하</value>
+  </data>
   <data name="CurrentBug" xml:space="preserve">
     <value>현재버그</value>
   </data>
@@ -132,8 +138,20 @@
   <data name="ExpectResult" xml:space="preserve">
     <value>기대효과</value>
   </data>
+  <data name="Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
   <data name="Filter" xml:space="preserve">
     <value>필터</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>상</value>
+  </data>
+  <data name="Middle" xml:space="preserve">
+    <value>중</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Pass</value>
   </data>
   <data name="PreCondition" xml:space="preserve">
     <value>환경세팅</value>

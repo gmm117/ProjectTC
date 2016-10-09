@@ -8,4 +8,15 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
+
+    <!-- 기본 레이블 스타일 -->
+    <Style x:Key="DefaultCenterLabelStyle" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
 </ResourceDictionary>

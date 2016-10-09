@@ -7,7 +7,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <framework:FilePathToSourceConverter x:Key="ImageConverter" />
+            <framework:DateTimeFormatConverter x:Key="DateTimeFormatConverter" />
+            <framework:DateTimeFormatType2Converter x:Key="DateTimeFormatType2Converter" />
+            <framework:DateTimeFormatType3Converter x:Key="DateTimeFormatType3Converter" />
+            <framework:DateTimeFormatType4Converter x:Key="DateTimeFormatType4Converter" />
+            <framework:HourTimeFormatConverter x:Key="HourTimeFormatConverter" />
             
+
             <!-- Style -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Framework;component/Style/CommonColor.xaml"/>

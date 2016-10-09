@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Bottom" xml:space="preserve">
+    <value>하</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>상</value>
+  </data>
+  <data name="Middle" xml:space="preserve">
+    <value>중</value>
+  </data>
   <data name="NotADOConnection" xml:space="preserve">
     <value>ADO Connection 실패하였습니다.</value>
   </data>

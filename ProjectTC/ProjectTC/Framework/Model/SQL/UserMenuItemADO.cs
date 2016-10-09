@@ -150,10 +150,10 @@ namespace Framework
         }
 
         /// <summary>
-        /// 상태("P":Pass, "F": Fail, "B":Block)
+        /// 상태("P"(1):Pass, "F"(2): Fail, "B"(3):Block)
         /// </summary>
-        private string status = "B";
-        public string Status
+        private int status = 3;
+        public int Status
         {
             get { return status; }
             set
@@ -163,10 +163,10 @@ namespace Framework
         }
 
         /// <summary>
-        /// 우선순위(High:상, middle:중, bottom:하)
+        /// 우선순위(High(1):상, middle(3):중, bottom(2):하)
         /// </summary>
-        private string priority = "B";
-        public string Priority
+        private int priority = 0;
+        public int Priority
         {
             get { return priority; }
             set
