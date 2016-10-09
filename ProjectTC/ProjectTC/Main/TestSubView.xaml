@@ -209,7 +209,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Style="{StaticResource DefaultLabelStyle}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="" />
+                                        <Label Style="{StaticResource DefaultLabelStyle}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="{Binding Seq}" />
                                     </Grid>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -219,8 +219,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Depth1}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Depth1}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -236,8 +236,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Depth2}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Depth2}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -253,8 +253,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Depth3}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Depth3}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -270,8 +270,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Depth4}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Depth4}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -287,8 +287,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Title}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Title}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -304,8 +304,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Tester}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Tester}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -321,8 +321,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding TestDate}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding TestDate}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -338,8 +338,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding TestTime}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding TestTime}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -389,8 +389,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible"/>
-                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="" />
+                                        <Label Name="Label" Style="{StaticResource DefaultLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Version}"/>
+                                        <TextBox Name="TextBox" Style="{StaticResource DefaultTextBoxStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Collapsed" Text="{Binding Version}" />
                                     </Grid>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
@@ -450,7 +450,7 @@
                     </Label>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="2">
-                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding TestStep}"></TextBox>
+                     <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding SelectedTestSubItem.TestStep}"></TextBox>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -472,7 +472,7 @@
                     </Label>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="2">
-                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding PreCondition}"></TextBox>
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding SelectedTestSubItem.PreCondition}"></TextBox>
                 </Grid>
             </Grid>
         </Border>
@@ -510,7 +510,7 @@
                     </Label>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="2">
-                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding CurTest}"></TextBox>
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding SelectedTestSubItem.CurTest}"></TextBox>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -532,7 +532,7 @@
                     </Label>
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="2">
-                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding ExpResult}"></TextBox>
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding SelectedTestSubItem.ExpResult}"></TextBox>
                 </Grid>
             </Grid>
         </Border>

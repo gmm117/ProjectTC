@@ -43,8 +43,8 @@ namespace ProjectTC
             }
         }
 
-        private TestSubModel selectedTestSubItem;
-        public TestSubModel SelectedTestSubItem
+        private UserMenuItemModel selectedTestSubItem;
+        public UserMenuItemModel SelectedTestSubItem
         {
             get
             {

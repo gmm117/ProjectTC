@@ -177,8 +177,7 @@ namespace ProjectTC
 
         private void InitializeMapper()
         {
-            Mapper.CreateMap<UserMenuItemADO, UserMenuItemModel>()
-                .ForMember(Item => Item.IsCheck, opt => opt.Ignore());
+            Mapper.CreateMap<UserMenuItemADO, UserMenuItemModel>();
         }
 
         private void Refresh()
