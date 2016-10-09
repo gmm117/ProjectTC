@@ -355,7 +355,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultCenterLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding StatusToString}"/>
+                                        <Label Name="Label" Style="{StaticResource DefaultCenterLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Status}"/>
                                         <ComboBox Name="Combobox" Style="{StaticResource DefaultRoundedComboBox}" Width="60"
                                                 ItemsSource="{Binding ComboStatusList}" VerticalContentAlignment="Center"  
                                                  SelectedItem="{Binding SelectedStatus, Mode=TwoWay}" DisplayMemberPath="DisplayString" Visibility="Collapsed">
@@ -380,7 +380,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Label Name="Label" Style="{StaticResource DefaultCenterLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding PriorityToString}"/>
+                                        <Label Name="Label" Style="{StaticResource DefaultCenterLabelStyle}" Width="{Binding  RelativeSource={RelativeSource Mode=FindAncestor , AncestorType=ListViewItem, AncestorLevel=1},Path=ActualWidth}" Visibility="Visible" Content="{Binding Priority}"/>
                                         <ComboBox Name="Combobox" Style="{StaticResource DefaultRoundedComboBox}" Width="60"
                                                 ItemsSource="{Binding ComboPriorityList}" VerticalContentAlignment="Center"  
                                                   SelectedItem="{Binding SelectedPriority, Mode=TwoWay}" DisplayMemberPath="DisplayString" Visibility="Collapsed">

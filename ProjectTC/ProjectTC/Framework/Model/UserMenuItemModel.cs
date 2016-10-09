@@ -212,8 +212,8 @@ namespace Framework
             {
                 selectedStatus = value;
 
-                if (selectedStatus.DisplayString != StatusToString)
-                    StatusToString = SelectedStatus.DisplayString;
+                if (selectedStatus.DisplayString != Status)
+                    Status = SelectedStatus.DisplayString;
 
                 OnPropertyChanged("SelectedStatus");
             }
@@ -222,17 +222,17 @@ namespace Framework
         /// <summary>
         /// 상태("P"(1):Pass, "F"(2): Fail, "B"(3):Block)
         /// </summary>
-        private string statusToString = "Block";
-        public string StatusToString
+        private string status = "Block";
+        public string Status
         {
             get 
             {
-                return statusToString; 
+                return status; 
             }
             set
             {
-                statusToString = value;
-                OnPropertyChanged("StatusToString");
+                status = value;
+                OnPropertyChanged("Status");
             }
         }
 
@@ -274,8 +274,8 @@ namespace Framework
             {
                 selectedPriority = value;
 
-                if (selectedPriority.DisplayString != PriorityToString)
-                    PriorityToString = selectedPriority.DisplayString;
+                if (selectedPriority.DisplayString != Priority)
+                    Priority = selectedPriority.DisplayString;
 
                 OnPropertyChanged("SelectedPriority");
             }
@@ -284,14 +284,14 @@ namespace Framework
         /// <summary>
         /// 우선순위(High(1):상, middle(3):중, bottom(2):하)
         /// </summary>
-        private string priorityToString = Resx.FrameworkresxKO.Bottom;
-        public string PriorityToString
+        private string priority = Resx.FrameworkresxKO.Bottom;
+        public string Priority
         {
-            get { return priorityToString; }
+            get { return priority; }
             set
             {
-                priorityToString = value;
-                OnPropertyChanged("PriorityToString");
+                priority = value;
+                OnPropertyChanged("Priority");
             }
         }
 

@@ -112,14 +112,15 @@
                             <Label.Content>
                                 <TextBlock>
                                     <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0}:">
+                                        <MultiBinding StringFormat="{}{0}: {1}">
                                             <Binding Source="{x:Static resx:ProjectTCResx.ProjectName}"/>
+                                            <Binding Path="ProjectName"/>
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
                             </Label.Content>
                         </Label>
-                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14" Content="{Binding ProjectName}"/>
                     </Grid>
                     <Grid Grid.Column="4">
                         <Grid.RowDefinitions>
@@ -135,14 +136,15 @@
                             <Label.Content>
                                 <TextBlock>
                                     <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0}:">
+                                        <MultiBinding StringFormat="{}{0}: {1}">
                                             <Binding Source="{x:Static resx:ProjectTCResx.TestName}"/>
+                                            <Binding Path="TestName"/>
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
                             </Label.Content>
                         </Label>
-                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14" Content="{Binding TestName}"/>
                     </Grid>
                 </Grid>
             </Border>
@@ -192,14 +194,15 @@
                             <Label.Content>
                                 <TextBlock>
                                     <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0}:">
+                                        <MultiBinding StringFormat="{}{0}: {1}건">
                                             <Binding Source="{x:Static resx:ProjectTCResx.TotCnt}"/>
+                                            <Binding Path="SelectedTabTest.TestTotCnt"/>
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
                             </Label.Content>
                         </Label>
-                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14" Content="{Binding TestTotCnt}"/>
                     </Grid>
                     <Grid Grid.Column="4">
                         <Grid.RowDefinitions>
@@ -215,14 +218,15 @@
                             <Label.Content>
                                 <TextBlock>
                                     <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0}:">
+                                        <MultiBinding StringFormat="{}{0}: {1}건">
                                             <Binding Source="{x:Static resx:ProjectTCResx.TotYesCnt}"/>
+                                            <Binding Path="SelectedTabTest.TestYesCnt"/>
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
                             </Label.Content>
                         </Label>
-                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14" Content="{Binding TestYesCnt}" />
                     </Grid>
                     <Grid Grid.Column="6">
                         <Grid.RowDefinitions>
@@ -238,14 +242,15 @@
                             <Label.Content>
                                 <TextBlock>
                                     <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0}:">
+                                        <MultiBinding StringFormat="{}{0}: {1}건">
                                             <Binding Source="{x:Static resx:ProjectTCResx.TotNoCnt}"/>
+                                            <Binding Path="SelectedTabTest.TestNoCnt"/>
                                         </MultiBinding>
                                     </TextBlock.Text>
                                 </TextBlock>
                             </Label.Content>
                         </Label>
-                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                        <Label Style="{StaticResource DefaultLabelStyle}" Grid.Row="1" Grid.Column="1" FontSize="14" Content="{Binding TestNoCnt}"/>
                     </Grid>
                 </Grid>
             </Border>
@@ -289,7 +294,18 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Label Margin="5,0" Content="Pass:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}: {1}건">
+                                            <Binding Source="Pass"/>
+                                            <Binding Path="SelectedTabTest.ResultYesCnt"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
                     </Grid>
                     <Grid Grid.Column="4">
                         <Grid.RowDefinitions>
@@ -301,7 +317,18 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Label Margin="5,0" Content="Fail:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}: {1}건">
+                                            <Binding Source="Fail"/>
+                                            <Binding Path="SelectedTabTest.ResultNoCnt"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
                     </Grid>
                     <Grid Grid.Column="6">
                         <Grid.RowDefinitions>
@@ -313,7 +340,18 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Label Margin="5,0" Content="Blocked:" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14"/>
+                        <Label Margin="5,0" Style="{StaticResource DefaultLabelStyle}" Grid.Row="1"  FontSize="14">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0}: {1}건">
+                                            <Binding Source="Blocked"/>
+                                            <Binding Path="SelectedTabTest.ResultBlockCnt"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
                     </Grid>
                 </Grid>
             </Border>

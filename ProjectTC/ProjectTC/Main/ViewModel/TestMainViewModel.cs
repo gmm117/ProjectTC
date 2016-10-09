@@ -89,10 +89,11 @@ namespace ProjectTC
             set
             {
                 selectedMenu = value;
+                OnPropertyChanged("SelectedMenu");
 
                 Refresh();
 
-                OnPropertyChanged("SelectedMenu");
+                
             }
         }
 
@@ -178,8 +179,8 @@ namespace ProjectTC
         private void InitializeMapper()
         {
             Mapper.CreateMap<UserMenuItemADO, UserMenuItemModel>()
-                .ForMember(to => to.PriorityToString, opt => opt.MapFrom(from => from.Priority == 1 ? Resx.ProjectTCResx.High : from.Priority == 2 ? Resx.ProjectTCResx.Middle : Resx.ProjectTCResx.Bottom))
-                .ForMember(to => to.StatusToString, opt => opt.MapFrom(from => from.Status == 1 ? Resx.ProjectTCResx.Pass : from.Priority == 2 ? Resx.ProjectTCResx.Fail : Resx.ProjectTCResx.Block));
+                .ForMember(to => to.Priority, opt => opt.MapFrom(from => from.Priority == 1 ? Resx.ProjectTCResx.High : from.Priority == 2 ? Resx.ProjectTCResx.Middle : Resx.ProjectTCResx.Bottom))
+                .ForMember(to => to.Status, opt => opt.MapFrom(from => from.Status == 1 ? Resx.ProjectTCResx.Pass : from.Priority == 2 ? Resx.ProjectTCResx.Fail : Resx.ProjectTCResx.Block));
         }
 
         private void Refresh()
@@ -203,8 +204,8 @@ namespace ProjectTC
                             subModel.TabContentView.VM.TestSubList = new ObservableCollection<UserMenuItemModel>(subItem.Select(Mapper.Map<UserMenuItemADO, UserMenuItemModel>).ToList());
                             foreach (var subItem1 in subModel.TabContentView.VM.TestSubList)
                             {
-                                subItem1.SelectedStatus = subItem1.ComboStatusList.Where(p => p.DisplayString == subItem1.StatusToString).FirstOrDefault();
-                                subItem1.SelectedPriority = subItem1.ComboPriorityList.Where(p => p.DisplayString == subItem1.PriorityToString).FirstOrDefault();
+                                subItem1.SelectedStatus = subItem1.ComboStatusList.Where(p => p.DisplayString == subItem1.Status).FirstOrDefault();
+                                subItem1.SelectedPriority = subItem1.ComboPriorityList.Where(p => p.DisplayString == subItem1.Priority).FirstOrDefault();
                             }
 
                             TabTestList.Add(subModel);
